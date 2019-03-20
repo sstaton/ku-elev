@@ -5,6 +5,16 @@ namespace ku_elev
         private int persons;
         private int weight;
         private int floors;
+        private bool open;
+
+	public bool getOpen() {
+		return this.open;
+	}
+
+	public void isOpen(bool open) {
+		this.open = open;
+	}
+
 
 	public int getPersons() {
 		return this.persons;
@@ -31,6 +41,20 @@ namespace ku_elev
 	}
 
 
+private MoveStatus moving;
 
+	public MoveStatus getMoving() {
+		return this.moving;
+	}
+
+	public void setMoving(MoveStatus moving) {
+		this.moving = moving;
+	}
+
+
+        public Elevator(int floors)
+        {
+            this.floors = floors;
+        }
     }
 }
