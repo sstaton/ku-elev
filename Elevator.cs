@@ -61,6 +61,21 @@ private string direction;
 		this.direction = direction;
 	}
 
+    public void upOne()
+    {
+        if (this.curr_floor < this.floors)
+        {
+            this.curr_floor++;
+        }
+    }
+    public void downOne()
+    {
+        if (this.curr_floor > 1)
+        {
+            this.curr_floor--;
+        }
+    }
+
 
 
 

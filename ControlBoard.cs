@@ -1,25 +1,29 @@
+using System.Collections.Generic;
+
 namespace ku_elev
 {
     class ControlBoard
     {
-        static Elevator[] elevators;
+        private Stack<Elevator> elevators;
         public ControlBoard()
         {
         }
         public ControlBoard(int num_flo, int num_elev)
         {
-            elevators = new Elevator[num_elev];
-            foreach (var elev in elevators)
+
+            elevators = new Stack<Elevator>();
+            for (int i = 0; i < num_elev; i++)
             {
                 Elevator elevator = new Elevator(num_flo);
+                elevators.Push(elevator);
             }
         }
         public string soundOff()
         {
             string soundOffs = "";
-            for (int i = 0; i < elevators.Length; i++)
-            {                
-                soundOffs += "Elevator " + i + " is going " + elevators[i].getDirection() + " at floor " + elevators[i].getCurr_floor();
+            foreach (var elev in elevators)
+            {
+                soundOffs = soundOffs + "An elevator is going " + elev.getDirection() + " at floor " + elev.getCurr_floor() + "\r\n";
             }
             return soundOffs;
         }

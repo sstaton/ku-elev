@@ -13,7 +13,7 @@ namespace ku_elev
             // int elev = Console.Read();
             // Console.WriteLine(elev);
             ControlBoard controlBoard = new ControlBoard(3, 3);
-            controlBoard.soundOff();
+            Console.WriteLine(controlBoard.soundOff());
         }
     }
 }
