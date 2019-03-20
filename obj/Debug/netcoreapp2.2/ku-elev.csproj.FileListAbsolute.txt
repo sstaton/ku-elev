@@ -1,0 +1,11 @@
+D:\OneDrive\Documents\VSCode\ku-elev\bin\Debug\netcoreapp2.2\ku-elev.deps.json
+D:\OneDrive\Documents\VSCode\ku-elev\bin\Debug\netcoreapp2.2\ku-elev.runtimeconfig.json
+D:\OneDrive\Documents\VSCode\ku-elev\bin\Debug\netcoreapp2.2\ku-elev.runtimeconfig.dev.json
+d:\OneDrive\Documents\VSCode\ku-elev\bin\Debug\netcoreapp2.2\ku-elev.dll
+d:\OneDrive\Documents\VSCode\ku-elev\bin\Debug\netcoreapp2.2\ku-elev.pdb
+d:\OneDrive\Documents\VSCode\ku-elev\obj\Debug\netcoreapp2.2\ku-elev.csprojAssemblyReference.cache
+d:\OneDrive\Documents\VSCode\ku-elev\obj\Debug\netcoreapp2.2\ku-elev.csproj.CoreCompileInputs.cache
+d:\OneDrive\Documents\VSCode\ku-elev\obj\Debug\netcoreapp2.2\ku-elev.AssemblyInfoInputs.cache
+d:\OneDrive\Documents\VSCode\ku-elev\obj\Debug\netcoreapp2.2\ku-elev.AssemblyInfo.cs
+d:\OneDrive\Documents\VSCode\ku-elev\obj\Debug\netcoreapp2.2\ku-elev.dll
+d:\OneDrive\Documents\VSCode\ku-elev\obj\Debug\netcoreapp2.2\ku-elev.pdb
