@@ -4,6 +4,7 @@ namespace ku_elev
 {
     class ControlBoard
     {
+        //Note, there are definitely better collections than the stack to use, it was just easiest for the short time limit
         private Stack<Elevator> elevators;
         public ControlBoard()
         {
@@ -34,10 +35,12 @@ namespace ku_elev
 
             foreach (var elevator in elevators)
             {
+                //no need to go
                 if (call_floor == dest_floor)
                 {
                     return "You're already here!";
                 }
+                //first unoccupied elevator on the same floor in the stack gets it!
                 if (!elevator.getOccupied() && elevator.getDirection() == "nowhere" && elevator.getCurr_floor() == call_floor)
                 {
                     elevator.isOpen(false);
@@ -53,16 +56,31 @@ namespace ku_elev
                     }
                     return "Elevator " + elevator.getName() + " serviced your request.";
                 }
+                //look for unoccupied elevators that are already heading to the direction of the calling floor, push them to a stack to be examined for closest
                 if (!elevator.getOccupied() &&
                         (elevator.getDirection() == "down" && elevator.getCurr_floor() > call_floor
-                            || elevator.getDirection() == "up" && elevator.getCurr_floor() < call_floor)
+                            || elevator.getDirection() == "up" && elevator.getCurr_floor() < call_floor))
                 {
                     possibles.Push(elevator);
                 }
-                foreach (var item in collection)
+                //has any?
+                if (possibles.Count > 0)
                 {
-                    
+                    //TODO foreach, stack.pop, service request with closest elevator utilizing Elevator.distanceFrom method
+                    return "TODO name of elevator";
                 }
+                //look for unoccupied elevators that are not moving next
+                if (!elevator.getOccupied() && elevator.getDirection() == "nowhere")
+                {
+                    possibles.Push(elevator);
+                }
+                if (possibles.Count > 0)
+                {
+                    //TODO foreach, stack.pop, service request with closest elevator utilizing Elevator.distanceFrom method
+                    return "TODO name of elevator";
+                }
+                //TODO if you got here, nothing could service them, so move time forward, and try again
+                return elevatorCall(call_floor, dest_floor);
             }
             return null;
 
