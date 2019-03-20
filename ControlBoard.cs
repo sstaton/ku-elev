@@ -38,10 +38,11 @@ namespace ku_elev
                 {
                     return "You're already here!";
                 }
-                if (elevator.getDirection() == "nowhere" && elevator.getCurr_floor() == call_floor)
+                if (!elevator.getOccupied() && elevator.getDirection() == "nowhere" && elevator.getCurr_floor() == call_floor)
                 {
                     elevator.isOpen(false);
                     elevator.isOccupied(true);
+                    elevator.setGoing_to_floor(dest_floor);
                     if (dest_floor > call_floor)
                     {
                         elevator.setDirection("up");
@@ -52,9 +53,18 @@ namespace ku_elev
                     }
                     return "Elevator " + elevator.getName() + " serviced your request.";
                 }
-
-
+                if (!elevator.getOccupied() &&
+                        (elevator.getDirection() == "down" && elevator.getCurr_floor() > call_floor
+                            || elevator.getDirection() == "up" && elevator.getCurr_floor() < call_floor)
+                {
+                    possibles.Push(elevator);
+                }
+                foreach (var item in collection)
+                {
+                    
+                }
             }
+            return null;
 
 
         }
@@ -64,6 +74,7 @@ namespace ku_elev
             //TODO move downward going occupied elevators down until they hit their floor, then open and unoccupy
             //TODO move upward going unoccupied elevators up until they hit their floor, then open and occupy
             //TODO move downward going unoccupied elevators down until they hit their floor, then open and occupy
+            //TODO increment floors passed and trips made
         }
     }
 }

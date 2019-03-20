@@ -1,3 +1,5 @@
+using System;
+
 namespace ku_elev
 {
     class Elevator
@@ -12,6 +14,35 @@ namespace ku_elev
         private int weight;
         private int floors;
         private int curr_floor;
+        private int going_to_floor;
+        private int floors_passed;
+        private int trips_made;
+
+	public int getFloors_passed() {
+		return this.floors_passed;
+	}
+
+	public void setFloors_passed(int floors_passed) {
+		this.floors_passed = floors_passed;
+	}
+
+	public int getTrips_made() {
+		return this.trips_made;
+	}
+
+	public void setTrips_made(int trips_made) {
+		this.trips_made = trips_made;
+	}
+
+
+	public int getGoing_to_floor() {
+		return this.going_to_floor;
+	}
+
+	public void setGoing_to_floor(int going_to_floor) {
+		this.going_to_floor = going_to_floor;
+	}
+
 
 
 	public string getName() {
@@ -106,6 +137,8 @@ private string direction;
             this.curr_floor = 1;
             this.open = false;
             this.occupied = false;
+            this.floors_passed = 0;
+            this.trips_made = 0;
         }
         public Elevator(int floors, string name)
         {
@@ -114,7 +147,14 @@ private string direction;
             this.curr_floor = 1;
             this.open = false;
             this.occupied = false;
+            this.floors_passed = 0;
+            this.trips_made = 0;
             this.name = name;
+        }
+
+        public int distanceFrom(int floor)
+        {
+            return Math.Abs(this.curr_floor - floor);
         }
 
         //public CreateElevators
