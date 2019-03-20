@@ -3,6 +3,8 @@ namespace ku_elev
     class Elevator
     {
         private bool open;
+        private bool occupied;
+
         private int persons;
         private string name;
 
@@ -35,6 +37,14 @@ namespace ku_elev
 		this.open = open;
 	}
 
+
+	public bool getOccupied() {
+		return this.occupied;
+	}
+
+	public void isOccupied(bool occupied) {
+		this.occupied = occupied;
+	}
 
 	public int getPersons() {
 		return this.persons;
@@ -92,14 +102,18 @@ private string direction;
         public Elevator(int floors)
         {
             this.floors = floors;
-            direction = "nowhere";
+            this.direction = "nowhere";
             this.curr_floor = 1;
+            this.open = false;
+            this.occupied = false;
         }
-        public Elevator(int floors, int name)
+        public Elevator(int floors, string name)
         {
             this.floors = floors;
-            direction = "nowhere";
+            this.direction = "nowhere";
             this.curr_floor = 1;
+            this.open = false;
+            this.occupied = false;
             this.name = name;
         }
 
