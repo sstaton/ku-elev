@@ -4,11 +4,21 @@ namespace ku_elev
     {
         private bool open;
         private int persons;
+        private string name;
+
+
         private int weight;
         private int floors;
         private int curr_floor;
 
-	public int getCurr_floor() {
+
+	public string getName() {
+		return this.name;
+	}
+
+	public void setName(string name) {
+		this.name = name;
+	}	public int getCurr_floor() {
 		return this.curr_floor;
 	}
 
@@ -84,6 +94,13 @@ private string direction;
             this.floors = floors;
             direction = "nowhere";
             this.curr_floor = 1;
+        }
+        public Elevator(int floors, int name)
+        {
+            this.floors = floors;
+            direction = "nowhere";
+            this.curr_floor = 1;
+            this.name = name;
         }
 
         //public CreateElevators
